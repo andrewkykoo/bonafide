@@ -1,12 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import facts from './fact-content';
+import NotFoundPage from './NotFoundPage';
 
 const FactPage = () => {
   const { factId } = useParams();
   const fact = facts.find(
     (fact) => `${fact.username}&${fact.number}` === factId
   );
+
+  if (!fact) {
+    return <NotFoundPage />;
+  }
 
   return (
     <>
