@@ -4,12 +4,13 @@ import AboutPage from './pages/AboutPage';
 import FactPage from './pages/FactPage';
 import FactsListPage from './pages/FactsListPage';
 import HomePage from './pages/HomePage';
+import NavBar from './NavBar';
 
 function App() {
   return (
     <BrowserRouter>
       <div>
-        <h1>Bona Fide</h1>
+        <NavBar />
         <div id='page-body'>
           <Routes>
             <Route path='/' element={<HomePage />} />
