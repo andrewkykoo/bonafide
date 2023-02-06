@@ -9,15 +9,12 @@ const FactPage = () => {
   );
 
   return (
-    <div>
+    <>
       <h1>{fact.title}</h1>
-      <br />
-      <div>
-        {fact.content.map((paragraph) => (
-          <p>{paragraph}</p>
-        ))}
-      </div>
-    </div>
+      {fact.content.map((paragraph, i) => (
+        <p key={i}>{paragraph}</p>
+      ))}
+    </>
   );
 };
 
