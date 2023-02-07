@@ -8,7 +8,7 @@ const FactsList = ({ facts }) => {
         <Link
           className='fact-list-item'
           to={`/facts/${fact.title}`}
-          key={fact.id}
+          key={fact.title}
         >
           <h3>{fact.title}</h3>
           <p>{fact.content[0].substring(0, 150)}...</p>
