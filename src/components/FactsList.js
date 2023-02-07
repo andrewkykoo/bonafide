@@ -7,7 +7,7 @@ const FactsList = ({ facts }) => {
       {facts.map((fact) => (
         <Link
           className='fact-list-item'
-          to={`/facts/${fact.username}&${fact.number}`}
+          to={`/facts/${fact.title}`}
           key={fact.id}
         >
           <h3>{fact.title}</h3>

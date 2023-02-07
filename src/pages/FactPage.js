@@ -5,9 +5,7 @@ import NotFoundPage from './NotFoundPage';
 
 const FactPage = () => {
   const { factId } = useParams();
-  const fact = facts.find(
-    (fact) => `${fact.username}&${fact.number}` === factId
-  );
+  const fact = facts.find((fact) => fact.title === factId);
 
   if (!fact) {
     return <NotFoundPage />;

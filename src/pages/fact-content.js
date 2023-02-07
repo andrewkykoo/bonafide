@@ -1,8 +1,5 @@
 const facts = [
   {
-    id: '0',
-    username: 'user1',
-    number: '1',
     title:
       'Billionaire Charles Koch-Backed Group Will Push GOP to Move Past Donald Trump',
     content: [
@@ -14,9 +11,6 @@ const facts = [
     ],
   },
   {
-    id: '1',
-    username: 'user2',
-    number: '1',
     title: `FTX has chased politicians like Nancy Pelosi to return donations given before the crypto giant's collapse. They now have a deadline of February 28 to pay.`,
     content: [
       `Bankrupt FTX is asking politicians and political action committees to return donations made by company employees by the end of the month.`,
@@ -27,9 +21,6 @@ const facts = [
     ],
   },
   {
-    id: '2',
-    username: 'user1',
-    number: '2',
     title:
       'Arctic blast sweeps through US north-east with record-breaking temperatures',
     content: [
