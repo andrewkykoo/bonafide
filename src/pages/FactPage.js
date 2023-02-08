@@ -4,6 +4,7 @@ import axios from 'axios';
 import facts from './fact-content';
 import NotFoundPage from './NotFoundPage';
 import CommentsList from '../components/CommentsList';
+import AddCommentForm from '../components/AddCommentForm';
 
 const FactPage = () => {
   const [factInfo, setFactInfo] = useState({ upvotes: 0, comments: [] });
@@ -43,6 +44,10 @@ const FactPage = () => {
       {fact.content.map((paragraph, i) => (
         <p key={i}>{paragraph}</p>
       ))}
+      <AddCommentForm
+        title={factId}
+        onFactUpdated={(updatedFact) => setFactInfo(updatedFact)}
+      />
       <CommentsList comments={factInfo.comments} />
     </>
   );
