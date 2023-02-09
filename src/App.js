@@ -7,7 +7,7 @@ import HomePage from './pages/HomePage';
 import NavBar from './NavBar';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from './pages/LoginPage';
-import CreateLoginPage from './pages/CreateLoginPage';
+import CreateLoginPage from './pages/CreateAccount';
 
 function App() {
   return (
