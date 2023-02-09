@@ -21,7 +21,7 @@ function App() {
             <Route path='/facts' element={<FactsListPage />} />
             <Route path='/facts/:factId' element={<FactPage />} />
             <Route path='/login' element={<LoginPage />} />
-            <Route path='/create-login' element={<CreateLoginPage />} />
+            <Route path='/create-account' element={<CreateLoginPage />} />
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
         </div>
