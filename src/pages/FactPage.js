@@ -15,8 +15,9 @@ const FactPage = () => {
 
   useEffect(() => {
     const loadFactInfo = async () => {
-      const response = await axios.get(`/api/facts/${factId}`);
-
+      const token = user && (await user.getIdToken());
+      const headers = token ? { authtoken: token } : {};
+      const response = await axios.get(`/api/facts/${factId}`, { headers });
       const newFactInfo = response.data;
       setFactInfo(newFactInfo);
     };
@@ -27,7 +28,11 @@ const FactPage = () => {
   const fact = facts.find((fact) => fact.title === factId);
 
   const addUpvote = async () => {
-    const response = await axios.put(`/api/facts/${factId}/upvote`);
+    const token = user && (await user.getIdToken());
+    const headers = token ? { authtoken: token } : {};
+    const response = await axios.put(`/api/facts/${factId}/upvote`, null, {
+      headers,
+    });
     const updatedFact = response.data;
     setFactInfo(updatedFact);
   };
