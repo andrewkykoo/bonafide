@@ -8,7 +8,12 @@ import AddCommentForm from '../components/AddCommentForm';
 import useUser from '../hooks/useUser';
 
 const FactPage = () => {
-  const [factInfo, setFactInfo] = useState({ upvotes: 0, comments: [] });
+  const [factInfo, setFactInfo] = useState({
+    upvotes: 0,
+    comments: [],
+    canUpvote: false,
+  });
+  const { canUpvote } = factInfo;
   const { factId } = useParams();
 
   const { user, isLoading } = useUser();
@@ -22,8 +27,10 @@ const FactPage = () => {
       setFactInfo(newFactInfo);
     };
 
-    loadFactInfo();
-  }, []);
+    if (!isLoading) {
+      loadFactInfo();
+    }
+  }, [isLoading, user]);
 
   const fact = facts.find((fact) => fact.title === factId);
 
@@ -46,7 +53,9 @@ const FactPage = () => {
       <h1>{fact.title}</h1>
       <div className='upvotes-section'>
         {user ? (
-          <button onClick={addUpvote}>Upvote</button>
+          <button onClick={addUpvote}>
+            {canUpvote ? 'Upvote' : 'Already upvoted'}
+          </button>
         ) : (
           <button>Log in to upvote</button>
         )}

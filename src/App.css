@@ -60,12 +60,9 @@ nav a:hover {
 }
 
 button {
-  padding: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
   background-color: black;
   color: white;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
